@@ -8,5 +8,4 @@ app.get("/",(req,res)=>{
     res.json(`i am conected to port ${port} here`)
 })
 app.listen(port,()=>{ 
-    console.log("my app is now running on port "+port)
-}) 
+    console.log("my app is up running on port "+port)  }) 
