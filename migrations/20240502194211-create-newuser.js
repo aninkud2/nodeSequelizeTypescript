@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       email: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(54),
         unique:true,
         allowNull: false,
 
@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       fullName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(78)
       },
       createdAt: {
         allowNull: false,
@@ -32,36 +32,6 @@ module.exports = {
     });
 
 
-    await queryInterface.createTable('products', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      productName: {
-        type: Sequelize.STRING,
-        unique:true,
-        allowNull: false,
-
-      },
-      productQty: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-
-      },
-      remarks: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('newusers');
